@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace FinalProject.Controllers
 {
-    public class HomeController : Controller
+    public class CharactersController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<CharactersController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public CharactersController(ILogger<CharactersController> logger)
         {
             _logger = logger;
         }
@@ -23,15 +23,11 @@ namespace FinalProject.Controllers
             return View();
         }
 
-        public IActionResult Search()
+        public IActionResult CharacterInfo()
         {
             return View();
         }
-        
-        public IActionResult SuggestionsQuestions()
-        {
-            return View();
-        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
@@ -40,3 +36,4 @@ namespace FinalProject.Controllers
         }
     }
 }
+

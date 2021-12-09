@@ -9,23 +9,29 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">FinalProject</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+        <nav>
+            <div>
+                <a class="navbar-brand dropdown-toggle" asp-area="" asp-controller="Home" asp-action="Index" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index">Homepage</a></li>
+                    <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Search">Search</a></li>
+                    <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="SuggestionsQuestions">Suggestion/Question Box</a></li>
+                </ul>
+            </div>
+            <div>
+                <a class="navbar-brand dropdown-toggle" asp-area="" asp-controller="Characters" asp-action="Index" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Characters</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" asp-area="" asp-controller="Characters" asp-action="Index">Characters</a></li>
+                    <li><a class="dropdown-item" asp-area="" asp-controller="Characters" asp-action="CharacterInfo">Character Information</a></li>
+                </ul>
+            </div>
+            <div>
+                <a class="navbar-brand dropdown-toggle" asp-area="" asp-controller="Mechanics" asp-action="Index" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mechanics</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" asp-area="" asp-controller="Mechanics" asp-action="Index">Game Mechanics</a></li>
+                    <li><a class="dropdown-item" asp-area="" asp-controller="Mechanics" asp-action="TowerInfo">Tower Information</a></li>
+                    <li><a class="dropdown-item" asp-area="" asp-controller="Mechanics" asp-action="TowerPage">Towers</a></li>
+                </ul>
             </div>
         </nav>
     </header>

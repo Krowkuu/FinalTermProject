@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace FinalProject.Controllers
 {
-    public class HomeController : Controller
+    public class MechanicsController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<MechanicsController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public MechanicsController(ILogger<MechanicsController> logger)
         {
             _logger = logger;
         }
@@ -23,15 +23,16 @@ namespace FinalProject.Controllers
             return View();
         }
 
-        public IActionResult Search()
+        public IActionResult TowerInfo()
         {
             return View();
         }
-        
-        public IActionResult SuggestionsQuestions()
+
+        public IActionResult TowerPage()
         {
             return View();
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
