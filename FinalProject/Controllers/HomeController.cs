@@ -11,29 +11,42 @@ namespace FinalProject.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private ProjectContext cntxt;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ProjectContext con)
         {
-            _logger = logger;
+            cntxt = con;
         }
 
+
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Search()
+        [HttpPost]
+        public IActionResult Search(Search s)
         {
-            return View();
+            List<string> results = new List<string>();
+
+            var charas = cntxt.Characters.Where(c => c.CharName.Contains(s.Query)|| c.CharGender.Contains(s.Query)).ToList();
+            foreach(CharacterModel c in charas)
+            {
+                results.Add(c.CharName);
+            }
+
+            ViewBag.results = results;
+            return View("Search");
+
         }
-        
+        [HttpPost]
         public IActionResult SuggestionsQuestions()
         {
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+            [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
