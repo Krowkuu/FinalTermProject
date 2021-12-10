@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
             <a class="navbar-brand" href="#">Towering Love</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -20,8 +20,8 @@
                         <div>
                             <a class="navbar-brand dropdown-toggle" asp-area="" asp-controller="Characters" asp-action="Index" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Characters</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Characters" asp-action="Index">Individual Character Information</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Characters" asp-action="Best">List of Characters</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Characters" asp-action="Index">List of Characters</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Characters" asp-action="CharacterInfo">Character Information</a></li>
                             </ul>
                         </div>
                     </li>
@@ -40,8 +40,8 @@
                             <a class="navbar-brand dropdown-toggle" asp-area="" asp-controller="Mechanics" asp-action="Index" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mechanics</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" asp-area="" asp-controller="Mechanics" asp-action="Index">Game Mechanics</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Mechanics" asp-action="Best">List of Towers</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Mechanics" asp-action="Best">Individual Tower Page</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Mechanics" asp-action="TowerPage">List of Towers</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Mechanics" asp-action="TowerInfo">Individual Tower Page</a></li>
                             </ul>
                         </div>
                     </li>

@@ -25,22 +25,28 @@ namespace FinalProject.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult Search(Search s)
+        public IActionResult Search()
+        {
+            return View();
+        }
+
+
+        public IActionResult SearchResults(Search s)
         {
             List<string> results = new List<string>();
 
-            var charas = cntxt.Characters.Where(c => c.CharName.Contains(s.Query)|| c.CharGender.Contains(s.Query)).ToList();
-            foreach(CharacterModel c in charas)
+            var characters = cntxt.Characters.Where(c => c.CharName.Contains(s.Query)).ToList();
+
+            foreach(CharacterModel c in characters)
             {
                 results.Add(c.CharName);
             }
 
             ViewBag.results = results;
-            return View("Search");
+            return View();
 
         }
-        [HttpPost]
+
         public IActionResult SuggestionsQuestions()
         {
             return View();

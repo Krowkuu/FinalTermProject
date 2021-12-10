@@ -1,9 +1,9 @@
-﻿
-<h1>Search Results</h1>
+﻿@model Search
 
-<ul>
-    @foreach (string result in ViewBag.results)
-    {
-        <li>@result</li>
-    }
-</ul>
+<div class="text-center">
+    <form asp-action="SearchResults" method="post">
+        <label asp-for="Query">Search: </label>
+        <input asp-for="Query" />
+        <button type="submit">Search</button>
+    </form>
+</div>

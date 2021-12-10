@@ -8,10 +8,14 @@ namespace FinalProject.Models
 {
     public class ProjectContext : DbContext
     {
+        public ProjectContext()
+        {
+        }
+
         public ProjectContext(DbContextOptions<ProjectContext> options) : base(options) { }
 
         public DbSet<CharacterModel> Characters { get; set; }
-        public DbSet<SuggestionQuestionModel> SuggestionQuestion { get; set; }
+        public DbSet<SuggestionQuestionModel> SuggestionQuestions { get; set; }
         public DbSet<TowerModel> Towers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
