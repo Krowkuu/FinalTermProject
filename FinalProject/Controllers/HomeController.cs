@@ -49,7 +49,26 @@ namespace FinalProject.Controllers
 
         public IActionResult SuggestionsQuestions()
         {
+            ViewBag.quesuges = cntxt.SuggestionQuestion.ToList();
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult SuggestionsQuestions(SuggestionQuestionModel model)
+        {
+            if (model.QuesSugesId > 0)
+            {
+                cntxt.SuggestionQuestion.Update(model);
+                cntxt.SaveChanges();
+            }
+            else
+            {
+                cntxt.SuggestionQuestion.Add(model);
+                cntxt.SaveChanges();
+            }
+
+            ViewBag.quesuges = cntxt.SuggestionQuestion.ToList();
+            return View(new SuggestionQuestionModel());
         }
 
             [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

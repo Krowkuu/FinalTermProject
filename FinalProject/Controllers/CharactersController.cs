@@ -11,15 +11,16 @@ namespace FinalProject.Controllers
 {
     public class CharactersController : Controller
     {
-        private readonly ILogger<CharactersController> _logger;
+        private ProjectContext cntxt;
 
-        public CharactersController(ILogger<CharactersController> logger)
+        public CharactersController(ProjectContext con)
         {
-            _logger = logger;
+            cntxt = con;
         }
 
         public IActionResult Index()
         {
+            ViewBag.charas = cntxt.Characters.ToList();
             return View();
         }
 

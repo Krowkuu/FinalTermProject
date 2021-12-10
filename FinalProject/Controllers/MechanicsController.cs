@@ -11,11 +11,11 @@ namespace FinalProject.Controllers
 {
     public class MechanicsController : Controller
     {
-        private readonly ILogger<MechanicsController> _logger;
+        private ProjectContext cntxt;
 
-        public MechanicsController(ILogger<MechanicsController> logger)
+        public MechanicsController(ProjectContext con)
         {
-            _logger = logger;
+            cntxt = con;
         }
 
         public IActionResult Index()
@@ -30,6 +30,7 @@ namespace FinalProject.Controllers
 
         public IActionResult TowerPage()
         {
+            ViewBag.towers = cntxt.Towers.ToList();
             return View();
         }
 

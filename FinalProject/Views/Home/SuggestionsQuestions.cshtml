@@ -1,1 +1,59 @@
-﻿
+﻿@model SuggestionQuestionModel;
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-1">
+             QS ID
+        </div>
+        <div class="col-md-2">
+            Name
+        </div>
+        <div class="col-md-2">
+            Subject
+        </div>
+        <div class="col-md-2">
+            Question/Suggestion
+        </div>
+    </div>
+</div>
+
+@foreach (var sugue in ViewBag.quesuges)
+{
+<div class="row">
+    <div class="col-md-2">
+        @sugue.QuesSugesId
+    </div>
+    <div class="col-md-2">
+        @sugue.Name
+    </div>
+    <div class="col-md-2">
+        @sugue.Subject
+    </div>
+    <div class="col-md-2">
+        @sugue.QuesSuges
+    </div>
+</div>
+        }
+
+
+        <form asp-action="SuggestionsQuestions" method="post">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-1">
+                        Name <input asp-for="Name" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-1">
+                        Subject <input asp-for="Subject" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-1">
+                        Question/Suggestion<input asp-for="QuesSuges" />
+                    </div>
+                </div>
+            </div>
+            <button type="submit">Send Message</button>
+
+        </form>

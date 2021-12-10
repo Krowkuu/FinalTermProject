@@ -1,4 +1,5 @@
 using System;
+using Microsoft.EntityFrameworkCore;
 using Xunit;
 using FinalProject.Models;
 using System.Collections.Generic;
@@ -16,12 +17,14 @@ namespace FinalProjectTests
         TowerModel tower;
         List<TowerModel> towers;
         
+
         [Fact]
         public void CanAccessDatabases()
         {
-            cntxt = new ProjectContext();
+
 
             charas = cntxt.Characters.OrderBy(cha => cha.CharacterId).ToList();
+            Assert.Equal(2, charas.Count);
         }
     }
 }

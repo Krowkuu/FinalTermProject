@@ -1,5 +1,40 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿<div class="container">
+    <div class="row">
+        <div class="col-md-1">
+            Name
+        </div>
+        <div class="col-md-3">
+            Type
+        </div>
+        <div class="col-md-2">
+            Range
+        </div>
+        <div class="col-md-2">
+            Damage
+        </div>
+        <div class="col-md-4">
+            Description
+        </div>
+    </div>
+</div>
+
+@foreach (var tow in ViewBag.towers)
+{
+    <div class="row">
+        <div class="col-md-1">
+            @tow.TowerName
+        </div>
+        <div class="col-md-3">
+            @tow.TowerType
+        </div>
+        <div class="col-md-2">
+            @tow.TowerRange
+        </div>
+        <div class="col-md-2">
+            @tow.TowerDamage
+        </div>
+        <div class="col-md-4">
+            @tow.TowerDescript
+        </div>
+    </div>
 }

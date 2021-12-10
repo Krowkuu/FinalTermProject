@@ -1,7 +1,44 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-    ViewData["Title"] = "Significant People";
+﻿@{
+    ViewData["Title"] = "Character Index";
+}
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-1">
+             Name
+        </div>
+        <div class="col-md-3">
+            Gender
+        </div>
+        <div class="col-md-2">
+            Species
+        </div>
+        <div class="col-md-3">
+            Orientation
+        </div>
+        <div class="col-md-3">
+            Description
+        </div>
+    </div>
+</div>
+
+@foreach (var cha in ViewBag.charas)
+{
+    <div class="row">
+        <div class="col-md-1">
+            @cha.CharName
+        </div>
+        <div class="col-md-3">
+            @cha.CharGender
+        </div>
+        <div class="col-md-2">
+            @cha.CharSpecies
+        </div>
+        <div class="col-md-3">
+            @cha.CharOrientation
+        </div>
+        <div class="col-md-3">
+            @cha.Description
+        </div>
+    </div>
 }
